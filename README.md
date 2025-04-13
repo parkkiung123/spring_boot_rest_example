@@ -9,6 +9,7 @@ swagger같은 걸로 자동 생성한다고 하는데, 일단 이런 것들이 �
 | GET    | /api/students          | 모든 학생 목록 조회 (페이징 포함)                 |
 | POST   | /api/students          | 새로운 학생 생성                                   |
 | GET    | /api/students/search   | 사용자 정의 쿼리 메서드 검색 목록 (예: `findByName`) |
+
 ✅ 개별 리소스 (단일 Student)<br>
 | 메서드 | URL               | 설명                           |
 |--------|-------------------|--------------------------------|
@@ -16,11 +17,13 @@ swagger같은 걸로 자동 생성한다고 하는데, 일단 이런 것들이 �
 | PUT    | /api/students/{id}    | 특정 학생 전체 업데이트       |
 | PATCH  | /api/students/{id}    | 특정 학생 부분 업데이트       |
 | DELETE | /api/students/{id}    | 특정 학생 삭제                |
+
 선생의 경우는 /teachers 로 비슷한 방식으로 존재<br>
 로그인의 경우는 POST /api/login<br>
 
 ## 출력 예
-```http://localhost:8080/api/students
+`http://localhost:8080/api/students`
+```
 {
   "_embedded" : {
     "students" : [ {
@@ -78,7 +81,8 @@ swagger같은 걸로 자동 생성한다고 하는데, 일단 이런 것들이 �
   }
 }
 ```
-```http://localhost:8080/api/students/search
+`http://localhost:8080/api/students/search`
+```json
 {
   "_links" : {
     "findTopByHistory" : {
@@ -107,7 +111,8 @@ swagger같은 걸로 자동 생성한다고 하는데, 일단 이런 것들이 �
 ```
 
 ## CORS
-```xxxApplication.java
+`xxxApplication.java`
+```java
 //이하 추가
 @Bean
 CorsFilter corsFilter() {
