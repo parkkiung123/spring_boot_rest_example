@@ -27,7 +27,7 @@ swagger같은 걸로 자동 생성한다고 하는데, 일단 이런 것들이 �
 
 ## 출력 예
 `http://localhost:8080/api/students`
-```
+```json
 {
   "_embedded" : {
     "students" : [ {
